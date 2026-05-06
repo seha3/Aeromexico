@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  color: #111;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 100px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.trip {
+  width: 733px;
+  max-width: 100%;
+}
+
+.trip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #ededed;
+}
+
+.trip-header h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.trip-info {
+  text-align: right;
+  padding-top: 0;
+}
+
+.trip-info a {
+  display: inline-flex;
+  align-items: center;
+  color: #4564ff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.trip-info a:hover {
+  color: #0f3fe8;
+  text-decoration: underline;
+}
+
+.trip-info a:active {
+  opacity: 0.75;
+}
+
+.trip-info p {
+  margin: 4px 0 0;
+  color: #909090;
+  font-size: 16px;
+}
+
+.trip-content {
+  display: flex;
+  width: 100%;
+  gap: 28px;
+  padding-top: 40px;
+  align-items: flex-start;
+}
+
+.main-card {
+  width: 353px;
+  flex-shrink: 0;
+  min-height: 398px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-card > img {
+  width: 100%;
+  height: 169.48px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.main-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 169.48px;
+  background: rgba(69, 99, 255, 0.2);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-content {
+  flex: 1;
+  padding: 28px 28px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content h2 {
+  margin: 0 0 24px;
+
+  font-size: 23px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #000;
+}
+
+.detail {
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.25;
+  color: #8a8a8a;
+}
+
+.detail img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.price strong {
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.price span {
+  font-size: 12px;
+  color: #555;
+}
+
+.card-footer span {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #8a8a8a;
+}
+
+.card-footer button {
+  min-width: 120px;
+  height: 40px;
+  background: #4564ff;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 16px;
+}
+
+.extra-list {
+  width: 352px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.extra-card {
+  width: 352px;
+  min-height: 84px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(17, 17, 17, 0.06);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.extra-card > img {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: block;
+  transition: filter 0.2s ease;
+}
+
+.icon {
+  color: #4564ff;
+  font-size: 30px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.extra-card h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.extra-card p {
+  margin: 0;
+  color: #8f8f8f;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.main-card:hover {
+  border-color: #4564ff;
+  filter: grayscale(0%);
+}
+
+.main-card:hover img {
+  filter: none;
+}
+
+.main-card:hover h2 {
+  color: #4564ff;
+}
+
+.main-card:hover::before {
+  opacity: 0;
+}
+
+.extra-card:hover {
+  background: #4564ff;
+  color: #fff;
+}
+
+.extra-card:hover .icon,
+.extra-card:hover p {
+  color: #fff;
+}
+
+.extra-card:hover > img {
+  filter: brightness(0) invert(1);
+}
+
+.card-footer button:hover {
+  background: #0f3fe8;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #4564ff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  body {
+    background: #fff;
+  }
+
+  .page {
+    padding: 24px 24px 40px;
+  }
+
+  .trip {
+    width: 328px;
+    max-width: 100%;
+  }
+
+  .trip-header {
+    flex-direction: column;
+    padding-bottom: 4px;
+  }
+
+  .trip-header h1 {
+    font-size: 28px;
+    line-height: 1.12;
+  }
+
+  .trip-info {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2px;
+    text-align: left;
+    padding-top: 6px;
+  }
+
+  .trip-info p {
+    margin: 0;
+    font-size: 13px;
+  }
+
+.trip-info a {
+    font-size: 13px;
+  }
+
+  .trip-content {
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 32px;
+  }
+
+  .main-card {
+    width: 100%;
+    min-height: 176px;
+    flex-direction: row;
+  }
+
+  .main-card > img {
+    width: 102px;
+    height: auto;
+    object-position: center center;
+    min-height: 100%;
+  }
+
+  .main-card::before {
+    inset: 0 auto 0 0;
+    width: 102px;
+    height: auto;
+  }
+
+  .card-content {
+    padding: 16px 14px 12px;
+  }
+
+  .card-content h2 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 1.15;
+  }
+
+  .detail {
+    margin-bottom: 6px;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .detail img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .card-footer {
+    margin-top: auto;
+    padding-top: 12px;
+    align-items: center;
+  }
+
+  .price {
+    gap: 3px;
+  }
+
+  .price strong {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .price span {
+    font-size: 11px;
+  }
+
+  .card-footer span {
+    font-size: 10px;
+  }
+
+  .card-footer button {
+    min-width: 86px;
+    height: 36px;
+    font-size: 11px;
+    padding: 0 12px;
+  }
+
+  .extra-list {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .extra-card {
+    width: 100%;
+    min-height: 64px;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .extra-card > img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .icon {
+    font-size: 22px;
+  }
+
+  .extra-card h3 {
+    margin-bottom: 2px;
+    font-size: 15px;
+    line-height: 1.15;
+  }
+
+  .extra-card p {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
